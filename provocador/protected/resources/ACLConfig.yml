@@ -1,0 +1,19 @@
+## YAML Template.
+---
+acl:
+  rol:
+    ROOT: root
+    ADMIN: admin
+    EDITOR: editor
+    PUBLISHER: publicador
+    USER: NULL
+  resources:
+    #Leer o ver la inforacion
+    view: leer
+    #modificar la informacion
+    create: crear
+    #puede modificar
+    modify: modificar
+    #puede eliminar
+    delete: eliminar
+    

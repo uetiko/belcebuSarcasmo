@@ -1,0 +1,8 @@
+## YAML Template.
+---
+base:
+  driver: pdo_mysql
+  host: localhost
+  dbname: activismoclick
+  user: activismo
+  password: '*2FCCA5D7EFE1EBCA0DF15A87F2996F29F8C06728'

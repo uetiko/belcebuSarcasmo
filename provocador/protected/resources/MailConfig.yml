@@ -1,0 +1,48 @@
+#Archivo de configuración para cuenta de correo.
+
+#Datos de prueba
+correo:
+  prueba:
+    usuario : uetiko
+    password : 
+    correo : uetiko@gmail.com
+    nombre : Angel Barrientos
+  info:
+    usuario : uetiko
+    password : 
+    correo : uetiko@gmail.com
+    nombre : 'ActivismoClick.com'
+  newsletter:
+    usuario : uetiko
+    password : 
+    correo : uetiko@gmail.com
+    nombre : Newsletter
+#datos de configuración para correos
+smtp :
+  server : smtp.gmail.com
+  autentificacion : si
+  TLS : si
+  puerto : 465
+  SMTPAuth : true
+  NoSMTPAuth : false
+  SMTPSecure : ssl
+#mensaje
+#
+mensaje:
+  info:
+    registro:
+      usuario:
+        asunto: "{nombre} te damos la bienvenida a ActivismoClick.com"
+        mensaje : "Hola {nombre} {apellido}, <br/><br/> Gracias por inscribirte, ya estas activo!<br/><br/>No olvides que tu experiencia y aportación a esta comunidad de activistas puede mejorar enormemente si completas tu perfil y lo personalizas aún más. Con esto, nosotros podremos darte más elementos para concetrate mejor cpn las causas en ls que crees. <br/><br/>Es muy sencillo, solo da click aquí: {link} <br/><br/>Gracias de nuevo, sigamos construyendo comunidad! <br/><br/>El Equipo de ActivismoClick.com "
+      ong:
+        asunto: 
+        mensaje:
+    cambio:
+      asunto: "Confirmación de cambio de contraseña"
+      mensaje: "Hola {nombre} {apellido},<br/><br/>Recientemente nos solicitaste poder cambiar tu contraseña, es muy fácil. Solo haz click en la siguiente liga:<br/><br/>{link}<br/><br/>Muchas gracias, a seguir activos!<br/><br/>El equipo de ActivismoClick.com<br/><br/>(NOTA, poner “Si tu no solicitaste el cambio de contraseña, favor de hacer caso omiso y seguir usando tu cuenta como lo hace siempre!”)"
+    recomendacion:
+      asunto: "Gracias por tu recomendación!"
+      mensaje: "Hola {nombre} {apellido},<br/><br/>Gracias por hacer comunidad junto con nosotros!<br/><br/>Contactaremos a la brevedad al grupo {ONGName} y te avisaremos cuando se hayan registrado para que no olvides sumarlos a tu lista de ONGs favoritas.<br/><br/>Muchas gracias de nuevo y a seguir activos!<br/><br/>El equipo de ActivismoClick.com"
+    recuperacion:
+      asunto: "Confirmación de cambio de contraseña"
+      mensaje : "Hola {nombre} {apellido},<br/><br/>Recientemente nos solicitaste poder cambiar tu contraseña. Tu nueva contraseña es: {password}<br/><br/>Muchas gracias, a seguir activos! <br/><br/>El equipo de ActivismoClick.com <br/><br/>(NOTA, poner “Si tu no solicitaste el cambio de contraseña, favor de hacer caso omiso y seguir usando tu cuenta como lo hace siempre!”)"
