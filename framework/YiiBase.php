@@ -421,12 +421,16 @@ class YiiBase
 					include($className.'.php');
 			}
 			else{  // class name with namespace in PHP 5.3
-                            $path = str_replace('\\', DIRECTORY_SEPARATOR, $className);
+                            if(!ereg("_", $className)){
+                                $path = str_replace('\\', DIRECTORY_SEPARATOR, $className);
+                            }else{
+                                $class = array_reverse(explode("\\", $className));
+                                $path = str_replace("_", DIRECTORY_SEPARATOR, $class[0]);
+                            }
                             $base = Yii::getPathOfAlias('application');
                             $inprotected = $base . DIRECTORY_SEPARATOR . $path . ".php";
                             $inbase = realpath($base . "/../../$path.php");
                             $inlib = realpath($base . "/../$path.php");
-                            print_r("$inprotected::$inbase::$inlib::<br>");
                             if(file_exists($inprotected)){
                                 include_once $inprotected;
                             }elseif(file_exists($inlib)){
