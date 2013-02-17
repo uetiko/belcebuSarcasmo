@@ -8,7 +8,7 @@ namespace Mail;
 /**
  * Description of NewsletterFactory
  *
- * @author silent
+ * @author Angel Barrientos <uetiko@gmail.com>
  */
 class NewsletterFactory extends \Mail\AbstractMailFactory{
     private $conf = NULL;
@@ -45,7 +45,7 @@ class NewsletterFactory extends \Mail\AbstractMailFactory{
         $this->service->Subject = $asunto;
         $this->service->Body = $mensaje;
         $this->service->AddAddress($correo);
-        if(NULL !== $fileName){
+        if(!is_null($fileName)){
             $this->service->AddAttachment($filePath, $fileName);
         }
         try {

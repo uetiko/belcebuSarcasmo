@@ -6,7 +6,7 @@ use \Exception;
  * @abstract
  * @package Mail
  * @uses \Exception Clase Exception de php
- * @author Angel Barrientos <angel@pangostores.com>
+ * @author Angel Barrientos <uetiko@gmail.com>
  */
 abstract class AbstractMailFactory {
     public abstract function sendMail($correo, $asunto, $mensaje, $filePath = NULL, $fileName = NULL);

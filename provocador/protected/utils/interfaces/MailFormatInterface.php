@@ -14,6 +14,7 @@ abstract class MailFormatInterface {
 
     abstract public static function subjetFormat($subjet, $nombre, $apellido);
     abstract public static function bodyFormat($body, $nombre, $apellido);
+    abstract public static function formatContent($content);
 }
 
 ?>

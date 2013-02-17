@@ -60,14 +60,12 @@ class JJLogger {
             }
         } else {
             mkdir($this->config->getDirLog(), 0777);
-            $logDir = $this->config->getDirLog() . "/" . $logName . ".log";
+            $logDir = Yii::getPathOfAlias('application') . DIRECTORY_SEPARATOR . $this->config->getDirLog() . DIRECTORY_SEPARATOR . $logName . ".log";
             try {
                 $openDir = fopen($logDir, "a+");
                 fwrite($openDir, $errorMsg);
                 fclose($openDir);
             } catch (Exception $e) {
-                $e->getMessage();
-                $e->getTrace();
             }
         }
     }
