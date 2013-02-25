@@ -313,7 +313,7 @@ class YiiBase
 					if(is_file($path.'.php'))
 						require($path.'.php');
 					else
-						throw new CException(Yii::t('yii','Alias "{alias}" is invalid. Make sure it points to an existing PHP file and the file is readable.',array('{alias}'=>$alias)));
+						throw new CException(Yii::t('yii','Alias "{alias}" is invalid. Make sure it points to an existing PHP file and the file is readable.--' . $className,array('{alias}'=>$alias)));
 					self::$_imports[$alias]=$className;
 				}
 				else
@@ -429,14 +429,17 @@ class YiiBase
                             }
                             $base = Yii::getPathOfAlias('application');
                             $inprotected = $base . DIRECTORY_SEPARATOR . $path . ".php";
-                            $inbase = realpath($base . "/../../$path.php");
+                            $inbase = (string)realpath($base . "/../../$path.php");
                             $inlib = realpath($base . "/../$path.php");
+                            $intolib = realpath($base . "/../lib/$path.php");
                             if(file_exists($inprotected)){
                                 include_once $inprotected;
                             }elseif(file_exists($inlib)){
-                                print_r($inlib);
+                                include_once $inlib;
                             }elseif(file_exists($inbase)){
                                 include_once $inbase;
+                            }elseif(file_exists($intolib)){
+                                include_once $intolib;
                             }
 			}
 			return class_exists($className,false) || interface_exists($className,false);
